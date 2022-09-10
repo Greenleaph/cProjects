@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(void) {
     // variable initialization
@@ -13,14 +14,13 @@ int main(void) {
 
     // convert celsius to fahrenheit
     fahr = (9.0/5.0) * value2 + 32;
-    celsius = 5.0 * (fahr-32.0) / 9.0;
+    celsius = 5.0 * (value1-32.0) / 9.0;
 
     // display results
-    printf("Celsius\t\tFahrenheit");
-    printf("\n%2.2f\t\t%2.2f", value2, fahr);
-
-    printf("\nFahrenheit\tCelsius");
+    printf("Fahrenheit\tCelsius");
     printf("\n%2.2f\t\t%2.2f", value1, celsius);
+    printf("\nCelsius\t\tFahrenheit");
+    printf("\n%2.2f\t\t%2.2f", value2, fahr);
 
     return 0;
 }
