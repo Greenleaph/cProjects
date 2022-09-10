@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 #include <math.h>
 
@@ -20,7 +22,13 @@ int main(void) {
     getchar();
     return 0;
 }
-
+/**
+ * @brief The sieve of Eratosthenes running time is O(nlog(log(n))). 
+ * This function simply takes the value as a max number to generate 
+ * a sequence of primes to n
+ * 
+ * @param n 
+ */
 void sieveOfEratosthenes(int n) {
     // declare a list with index size of SIZE(100)
     int list[SIZE];
@@ -30,18 +38,18 @@ void sieveOfEratosthenes(int n) {
     for(int p = 2; p <= n; p++) {
         list[p] = p;
     }
+    // traverse through the list and attain the powers of 2
     for(int p = 2; p <= sqrt(n); p++) {
         if(list[p] != 0) {
             int j = p*p;
             while (j <= n)
             {
-                list[j] = 0;    // mark indexes as eliminated
+                list[j] = 0; // mark indexes as eliminated
                 j = j + p;      
             }
         }
     }
     // copy the remaining elements of the list to another array with primes
-
     int primeNumberCount = 0;
     for(int p = 2; p <= n; p++) {
         if(list[p] != 0 ) {
