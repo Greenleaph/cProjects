@@ -83,6 +83,7 @@ int main(void) {
             printf("Use chose package %c.\n", toupper(ch));
             // calculate the total bill for customer with package A
             totBill = PACKC;
+            break;
         default:
             printf("Invalid Entry.");
             break;
