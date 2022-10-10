@@ -1,3 +1,15 @@
+/**
+ * @file problem1.c
+ * @author Jesus Gil (jgilgalindo1@toromail.csudh.edu)
+ * @brief This program returns the approximation e given a positive integer value n.
+ *  
+ * @version 0.1
+ * @date 2022-10-08
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <math.h>
@@ -18,7 +30,8 @@ int main(void)
 {
 
     // variable declaration
-    int n = 0;
+    int n = 0, fact = 0;
+    float euler = 1.0f, sequence = 1.0f;
     char choice = 'y';
 
     printf("Enter a positive value: ");
@@ -37,7 +50,7 @@ int main(void)
             {
             case 'Y':
                 printf("Enter a positive value: ");
-                scanf(" %f", &n);
+                scanf(" %d", &n);
                 break;
             case 'N':
                 printf("Goodbye!");
@@ -46,7 +59,15 @@ int main(void)
 
         } while (n < 0);
     }
-
-    printf("%d", factorial(n));
+    // starting value
+    printf("1");
+    // traverse through a range of integer numbers 1 to n.
+    for(int i = 1; i <= n; i++) {
+        fact = factorial(i);
+        sequence = 1.0f/fact;
+        euler += sequence; 
+        printf(" + %.4f (1/%d)", sequence, fact);
+    }    
+    printf(" = %.4f", euler);
     return 0;
 }
