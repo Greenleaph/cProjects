@@ -1,3 +1,14 @@
+/**
+ * @file problem2.c
+ * @author Jesus Gil (jgilgalindo1@toromail.csudh.edu)
+ * @brief sorts two generated unordered lists of integer elements in decreasing order using the
+ * bubblesort and selectionsort algorithm.
+ * @version 0.1
+ * @date 2022-10-26
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
